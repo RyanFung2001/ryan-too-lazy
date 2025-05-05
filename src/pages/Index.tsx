@@ -27,7 +27,7 @@ const Index = () => {
     if (!text.trim()) return;
 
     // Add user message
-    const userMessage = { role: "user", content: text };
+    const userMessage: MessageType = { role: "user", content: text };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
@@ -35,7 +35,7 @@ const Index = () => {
     // In a real app, you would call your API here
     // For demo, we'll simulate a response after a delay
     setTimeout(() => {
-      const assistantMessage = { 
+      const assistantMessage: MessageType = { 
         role: "assistant", 
         content: `This is a simulated response to: "${text}". In a real implementation, this would come from your RTL core module using LangGraph.` 
       };
